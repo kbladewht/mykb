@@ -1,3 +1,5 @@
+#ifdef RGB_MATRIX_ENABLE
+
 #define LED_RIGHT 1
 #define LED_LEFT 0
 
@@ -44,3 +46,5 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     set_rgb_matrix_indicators(led_min, led_max);
     return false;
 }
+
+#endif

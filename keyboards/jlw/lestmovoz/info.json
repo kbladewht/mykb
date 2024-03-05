@@ -6,7 +6,7 @@
     "usb": {
         "vid": "0x1209",
         "pid": "0xA459",
-        "device_version": "0.1"
+        "device_version": "0.0.1"
     },
     "processor": "STM32F072",
     "bootloader": "stm32-dfu",
@@ -22,11 +22,7 @@
         "nkro": true,
     },
     "layouts": {
-        "LAYOUT_all": {
-            "animations":{
-                "alphas_mods": true,
-                "solid_color": true,
-            },
+        "LAYOUT": {
             "layout": [
                {"label": "Q", "matrix": [0, 0], "x": 0, "y": 0},
                {"label": "W", "matrix": [0, 1], "x": 1, "y": 0},
@@ -38,7 +34,7 @@
                {"label": "I", "matrix": [0, 7], "x": 7, "y": 0},
                {"label": "O", "matrix": [0, 8], "x": 8, "y": 0},
                {"label": "P", "matrix": [0, 9], "x": 9, "y": 0},
-               
+
                {"label": "A", "matrix": [1, 0], "x": 0, "y": 1},
                {"label": "S", "matrix": [1, 1], "x": 1, "y": 1},
                {"label": "D", "matrix": [1, 2], "x": 2, "y": 1},
@@ -49,7 +45,7 @@
                {"label": "K", "matrix": [1, 7], "x": 7, "y": 1},
                {"label": "L", "matrix": [1, 8], "x": 8, "y": 1},
                {"label": "Enter", "matrix": [1, 9], "x": 9, "y": 1},
-               
+
                {"label": "Z", "matrix": [2, 0], "x": 0, "y": 2},
                {"label": "X", "matrix": [2, 1], "x": 1, "y": 2},
                {"label": "C", "matrix": [2, 2], "x": 2, "y": 2},
@@ -60,7 +56,7 @@
                {"label": ",", "matrix": [2, 7], "x": 7, "y": 2},
                {"label": ".", "matrix": [2, 8], "x": 8, "y": 2},
                {"label": "/", "matrix": [2, 9], "x": 9, "y": 2},
-               
+
                {"label": "Shift", "matrix": [3, 0], "x": 0, "y": 3},
                {"label": "Alt", "matrix": [3, 1], "x": 1, "y": 3},
                {"label": "Fn", "matrix": [3, 2], "x": 2, "y": 3},
@@ -75,6 +71,10 @@
        }
     },
     "rgb_matrix": {
+        "animations":{
+            "alphas_mods": true,
+            "solid_color": true,
+        },
         "layout": [
             {"matrix": [0, 4], "x": 132, "y": 16, "flags": 8},
             {"matrix": [0, 5], "x": 172, "y": 16, "flags": 8},
