@@ -9,7 +9,6 @@ VPATH += keyboards/rgbkb/common
 SRC += touch_encoder.c
 SRC += common_oled.c
 QUANTUM_LIB_SRC += i2c_master.c
-I2C_DRIVER_REQUIRED = yes
 
 # Build Options
 #   change yes to no to disable
@@ -41,5 +40,3 @@ SERIAL_DRIVER = vendor
 OPT_DEFS += -DOLED_FONT_H=\"keyboards/rgbkb/common/glcdfont.c\"
 
 DEFAULT_FOLDER = rgbkb/mun2/rev1
-
-CONSOLE_ENABLE = yes
