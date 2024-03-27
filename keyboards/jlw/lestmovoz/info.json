@@ -72,12 +72,6 @@
        }
     },
     "rgb_matrix": {
-        "animations":{
-            "alphas_mods": true,
-            "solid_color": true,
-            "cycle_left_right": true
-        },
-        "default_animation": "cycle_left_right",
         "layout": [
             {"matrix": [0, 4], "x": 132, "y": 16, "flags": 8},
             {"matrix": [0, 5], "x": 172, "y": 16, "flags": 8},

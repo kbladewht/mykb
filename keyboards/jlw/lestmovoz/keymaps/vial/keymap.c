@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #define RGB_LAYER_INDICATOR_ENABLE
 #define RGB_MODS_INDICATOR_ENABLE
-#define RGB_INDICATOR_BRIGHTNESS 8
+#define RGB_INDICATOR_BRIGHTNESS 69
 
 #define LED_RIGHT 1
 #define LED_LEFT 0
@@ -51,8 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #define LAYER_G layer_colors[layer][1] *  RGB_INDICATOR_BRIGHTNESS / 255
 #define LAYER_B layer_colors[layer][2] *  RGB_INDICATOR_BRIGHTNESS / 255
 
-#define MODS_ACTIVE(mods) \
-    ((get_mods()|get_oneshot_mods()) & MOD_MASK_##mods ? RGB_INDICATOR_BRIGHTNESS:0)
+#define MODS_ACTIVE(mods) ((get_mods()|get_oneshot_mods()) & MOD_MASK_##mods ? RGB_INDICATOR_BRIGHTNESS:0)
 #define SHIFT_ACTIVE (get_mods() & MOD_MASK_SHIFT ? RGB_INDICATOR_BRIGHTNESS/4:0)
 #define MODS_R MODS_ACTIVE(CTRL) + SHIFT_ACTIVE
 #define MODS_G MODS_ACTIVE(GUI) + SHIFT_ACTIVE
