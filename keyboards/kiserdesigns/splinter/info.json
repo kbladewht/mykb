@@ -1,0 +1,41 @@
+{
+    "manufacturer": "Kiser Designs",
+    "url": "https://kiserdesigns.com/",
+    "maintainer": "NCKiser",
+    "keyboard_name": "Splinter",
+    "usb": {
+        "vid": "0x4B44",
+        "pid": "0x4267",
+        "device_version": "1.0.0"
+    },
+    "processor": "RP2040",
+    "bootloader": "rp2040",
+    "diode_direction": "COL2ROW",
+    "features": {
+        "audio": false,
+        "bootmagic": true,
+        "command": false,
+        "console": false,
+        "extrakey": true,
+        "mousekey": true,
+        "nkro": true,
+        "rgb_matrix": true
+    },
+    "split": {
+        "enabled": true,
+        "encoder": {
+            "right": {
+                "rotary": [
+                    {"pin_a": "GP5", "pin_b": "GP6"},
+                    {"pin_a": "GP5", "pin_b": "GP20"}
+                ]
+            }
+        },
+        "matrix_pins": {
+            "right": {
+                "cols": ["GP29", "GP28", "GP27", "GP7", "GP2", "GP3", "GP11", "GP12", "GP13"],
+                "rows": ["GP16", "GP19", "GP17", "GP9", "GP8", "GP26"]
+            }
+        }
+    },
+}
