@@ -3,20 +3,17 @@
     "rows": 8,
     "cols": 7
   },
+  "lighting": "vialrgb",
   "layouts": {
     "labels":[
-      "3u bars",
+      "Left 3u bar",
       "Left Encoder 1",
       "Left Encoder 2",
       "Left Encoder 3",
       "Left Encoder 4",
       "Right Encoder 1",
       "Right Encoder 2",
-      [
-        "RGB LED",
-        "Layer Indicator",
-        "Lock Indicator"
-      ]
+      "Right 3u Bar"
     ],
     "keymap": [
       [
@@ -149,12 +146,7 @@
         "6,4",
         "6,5",
         {
-          "x": 0.25,
-          "d": true
-        },
-        "6,6\n\n\n7,0",
-        {
-          "x": 0.25
+          "x": 1.5
         },
         "4,0\n\n\n5,1\n\n\n\n\n\ne",
         "4,1\n\n\n5,1\n\n\n\n\n\ne"
@@ -211,23 +203,18 @@
           "x": 0.75,
           "w": 1.75
         },
-        "7,0\n\n\n0,0",
+        "7,0\n\n\n7,0",
         {
           "w": 1.25
         },
-        "7,1\n\n\n0,0"
+        "7,1\n\n\n7,0"
       ],
       [
         {
           "y": -0.25
         },
         "0,0\n\n\n1,1\n\n\n\n\n\ne",
-        "0,1\n\n\n1,1\n\n\n\n\n\ne",
-        {
-          "x": 16.5,
-          "d": true
-        },
-        "6,6\n\n\n7,1"
+        "0,1\n\n\n1,1\n\n\n\n\n\ne"
       ],
       [
         {
@@ -240,7 +227,7 @@
           "x": 0.75,
           "w": 3
         },
-        "7,0\n\n\n0,1"
+        "7,0\n\n\n7,1"
       ],
       [
         {

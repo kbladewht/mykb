@@ -18,7 +18,8 @@
         "console": false,
         "extrakey": true,
         "mousekey": true,
-        "nkro": true
+        "nkro": true,
+        "rgb_matrix": true
     },
     "split": {
         "enabled": true,
@@ -36,6 +37,20 @@
                 "rows": ["GP22", "GP25", "GP29", "GP18"]
             }
         }
+    },
+    "ws2812": {
+        "pin": "GP10",
+        "driver": "vendor"
+    },
+    "rgb_matrix": {
+        "driver": "ws2812",
+        "split_count": [0, 1],"animations": {
+            "breathing": true,
+            "cycle_left_right": true
+        },
+        "layout": [
+            {"flags": 4, "x": 64, "y": 112}
+        ]
     },
     "matrix_pins": {
         "cols": ["GP1", "GP2", "GP3", "GP18", "GP4", "GP10", "GP25"],
