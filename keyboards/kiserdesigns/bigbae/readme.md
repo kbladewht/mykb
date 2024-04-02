@@ -1,6 +1,6 @@
 # BigBAE
 
-![BigBAE](https://i.imgur.com/replaceme.jpg)
+![BigBAE](https://i.imgur.com/RhkLArW.jpeg)
 
 *A scaled-up Big Enter key macropad supporting ANSI, ISO, and BAE Enter*
 * Keyboard Maintainer: [NCKiser](https://github.com/NCKiser)
