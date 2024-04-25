@@ -1,0 +1,26 @@
+#pragma once
+
+#define VIAL_KEYBOARD_UID {0xF5, 0x20, 0x6F, 0x99, 0xB3, 0x0D, 0x42, 0x76}
+
+#define VIAL_UNLOCK_COMBO_ROWS { 0, 3 }
+#define VIAL_UNLOCK_COMBO_COLS { 0, 2 }
+
+// place overrides here
+#define TAPPING_TERM 200
+#define IGNORE_MOD_TAP_INTERRUPT
+
+#ifdef MOUSEKEY_ENABLE
+  #undef MOUSEKEY_INTERVAL
+  #define MOUSEKEY_INTERVAL 1
+  #undef MOUSEKEY_TIME_TO_MAX
+  #define MOUSEKEY_TIME_TO_MAX 150
+
+  #undef MOUSEKEY_MAX_SPEED
+  #define MOUSEKEY_MAX_SPEED 3
+
+  #undef MOUSEKEY_MOVE_DELTA
+  #define MOUSEKEY_MOVE_DELTA 4
+
+  #undef MOUSEKEY_DELAY
+  #define MOUSEKEY_DELAY 0
+#endif
