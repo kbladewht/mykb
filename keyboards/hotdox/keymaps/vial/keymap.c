@@ -5,7 +5,8 @@
 #define MDIA 2 // media keys
 
 enum custom_keycodes {
-  VRSN = SAFE_RANGE
+  VRSN = SAFE_RANGE,
+  RGB_SLD
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -151,11 +152,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-    case KC_NO:
+    case RGB_SLD:
       if (record->event.pressed) {
-        #ifdef RGBLIGHT_ENABLE
           rgblight_mode(1);
-        #endif
       }
       return false;
       break;
