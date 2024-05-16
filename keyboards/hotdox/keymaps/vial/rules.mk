@@ -1,0 +1,9 @@
+VIA_ENABLE = yes
+VIAL_ENABLE = yes
+VIAL_INSECURE = yes
+LTO_ENABLE = yes
+BACKLIGHT_ENABLE = no
+RGBLIGHT_ENABLE = no
+QMK_SETTINGS = no
+# MOUSEKEY_ENABLE         = yes # Mouse keys
+# EXTRAKEY_ENABLE         = yes # Audio control and System control
