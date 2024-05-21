@@ -3,7 +3,7 @@
 #include "quantum.h"
 #include <stdint.h>
 #include <stdbool.h>
-#ifdef RGBLIGHT_ENABLE
+#ifdef BACKLIGHT_ENABLE
 void init_ergodox(void);
 
 inline void ergodox_board_led_on(void)    { DDRB |= (1<<PB7); PORTB |= (1<<PB7);  }
