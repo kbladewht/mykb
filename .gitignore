@@ -114,5 +114,5 @@ compile_commands.json
 .clangd/
 .cache/
 
-/keyboards/*
-!/keyboards/crkbd/
+keyboards/*
+!keyboards/crkbd/
