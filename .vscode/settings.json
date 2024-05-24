@@ -14,7 +14,7 @@
     "search.exclude": {
         "**/vial-qmk/keyboards/**": true,
         "**/vial-qmk/keyboards/crkbd/**": false
-    }
+    },
     "files.associations": {
         "*.h": "c",
         "*.c": "c",
