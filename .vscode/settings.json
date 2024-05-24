@@ -4,10 +4,6 @@
     "editor.insertSpaces": true,
     // Configure glob patterns for excluding files and folders.
     "files.exclude": {
-        "**/.build": true,
-        "**/*.bin": true,
-        "**/*.hex": true,
-        "**/*.uf2": true,
         "**/keyboards/[0-9]*/**": true,
         "**/keyboards/[a-bd-z]*/**": true,
         "**/keyboards/cr[a-jl-z]*/**": true,
