@@ -8,12 +8,16 @@
         "**/*.bin": true,
         "**/*.hex": true,
         "**/*.uf2": true,
-        "**/vial-qmk/keyboards/**": true,
-        "**/vial-qmk/keyboards/crkbd/**": false
+        "**/keyboards/[0-9]*/**": true,
+        "**/keyboards/[a-bd-z]*/**": true,
+        "**/keyboards/cr[a-jl-z]*/**": true,
+        "**/keyboards/c[a-q-s-z]*/**": true
     },
     "search.exclude": {
-        "**/vial-qmk/keyboards/**": true,
-        "**/vial-qmk/keyboards/crkbd/**": false
+        "**/keyboards/[0-9]*/**": true,
+        "**/keyboards/[a-bd-z]*/**": true,
+        "**/keyboards/cr[a-jl-z]*/**": true,
+        "**/keyboards/c[a-q-s-z]*/**": true
     },
     "files.associations": {
         "*.h": "c",
