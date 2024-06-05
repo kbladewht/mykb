@@ -1,0 +1,3 @@
+# Allow VIA(L) files
+!via*.json
+!/keymaps/vial/*
