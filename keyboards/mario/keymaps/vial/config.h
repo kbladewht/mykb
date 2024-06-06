@@ -1,6 +1,5 @@
 /*
-Copyright 2019 @foostan
-Copyright 2020 Drashna Jaelre <@drashna>
+Copyright 2024 @yuting wang
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -33,12 +32,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LED_ANIMATIONS
 
 #ifdef RGBLIGHT_ENABLE
-#    undef RGBLED_NUM
-#    define RGBLIGHT_ANIMATIONS
-#    define RGBLED_NUM 54
-#    undef RGBLED_SPLIT
-#    define RGBLED_SPLIT \
-        { 27, 27 }
 #    define RGBLIGHT_LIMIT_VAL 120
 #    define RGBLIGHT_HUE_STEP  10
 #    define RGBLIGHT_SAT_STEP  17
@@ -70,11 +63,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #       define ANALOG_JOYSTICK_SPEED_MAX 20
 #endif
 
-
 #ifdef ENCODER_ENABLE
 #define ENCODERS_PAD_A { F4 }
 #define ENCODERS_PAD_B { F5 }
-#define ENCODER_RESOLUTIONS_LEFT { 30 }
+#define ENCODER_RESOLUTIONS_LEFT { 2 }
 #define ENCODERS_PAD_A_RIGHT { }
 #define ENCODERS_PAD_B_RIGHT { }
 #define ENCODER_RESOLUTIONS_RIGHT { }

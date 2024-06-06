@@ -1,14 +1,13 @@
 {
     "keyboard_name": "mario",
     "maintainer": "yuting wang",
-    "processor": "RP2040",
+    "processor": "atmega32u4",
     "rgb_matrix": {
         "driver": "ws2812"
     },
     "features": {
         "bootmagic": true,
         "extrakey": true,
-        "lto": true,
         "mousekey": true,
         "nkro": true,
         "oled": true
