@@ -16,13 +16,21 @@
 
 #pragma once
 
-/* LED Matrix Driver Configuration */
-#define SNLED27351_I2C_ADDRESS_1 SNLED27351_I2C_ADDRESS_GND
-#define SNLED27351_CURRENT_TUNE \
-    { 0xA0, 0xA0, 0xA0, 0xA0, 0xA0, 0xA0, 0xA0, 0xA0, 0xA0, 0xA0, 0xA0, 0xA0 }
+/* DIP switch */
+#define DIP_SWITCH_PINS { D2 }
 
-/* Enable indicator LED*/
-#define NUM_LED_INDEX 16
-#define CAPS_LED_INDEX 17
-#define MAC_LED_INDEX 18
-#define WIN_LED_INDEX 19
+/* Indication led */
+#define LED_MAC_OS_PIN C10
+#define LED_WIN_OS_PIN C11
+#define LED_OS_PIN_ON_STATE 1
+
+/* The I2C Driver Configuration */
+#define I2C1_CLOCK_SPEED 400000
+#define I2C1_DUTY_CYCLE FAST_DUTY_CYCLE_2
+
+/* The SPI Driver Configuration */
+// #define SPI_DRIVER SPID1
+// #define SPI_SCK_PIN A5
+// #define SPI_MOSI_PIN A7
+// #define SPI_MISO_PIN A6
+// #define SNLED27351_SPI_DIVISOR 21
