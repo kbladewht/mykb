@@ -1,5 +1,5 @@
 {
-    "lighting":"qmk_rgb_matrix",
+    "lighting":"vialrgb",
     "matrix": {
         "rows": 10,
         "cols": 6
