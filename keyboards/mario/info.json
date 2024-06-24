@@ -2,6 +2,7 @@
     "keyboard_name": "mario",
     "maintainer": "yuting wang",
     "processor": "atmega32u4",
+    "bootloader": "atmel-dfu",
     "rgb_matrix": {
         "driver": "ws2812"
     },
