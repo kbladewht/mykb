@@ -3,7 +3,7 @@
 #include "quantum.h"
 #include <stdint.h>
 #include <stdbool.h>
-
+#ifdef BACKLIGHT_ENABLE
 void init_ergodox(void);
 
 inline void ergodox_board_led_on(void)    { DDRB |= (1<<PB7); PORTB |= (1<<PB7);  }
@@ -69,3 +69,4 @@ inline void ergodox_right_led_set(uint8_t l, uint8_t n) {}
 inline void ergodox_led_all_set(uint8_t n)              {}
 
 void ergodox_blink_all_leds(void);
+#endif
