@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define WS2812_DI_PIN D3
 #define SOFT_SERIAL_PIN D2
 
-#define VIAL_KEYBOARD_UID {0x3B, 0x6B, 0xA0, 0x29, 0x80, 0x56, 0xED, 0xD1}
+#define VIAL_KEYBOARD_UID {0xE8, 0x8C, 0xEF, 0x50, 0x0A, 0xD0, 0x3C, 0xAF}
 #define VIAL_UNLOCK_COMBO_ROWS {0, 0}
 #define VIAL_UNLOCK_COMBO_COLS {0, 1}
 
