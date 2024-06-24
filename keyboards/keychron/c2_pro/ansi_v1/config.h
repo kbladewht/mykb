@@ -1,4 +1,4 @@
-/* Copyright 2023 @ Keychron(https://www.keychron.com)
+/* Copyright 2022 @ Keychron(https://www.keychron.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,10 +16,28 @@
 
 #pragma once
 
-/* EEPROM Driver Configuration */
-#define WEAR_LEVELING_LOGICAL_SIZE 2048
-#define WEAR_LEVELING_BACKING_SIZE (WEAR_LEVELING_LOGICAL_SIZE * 2)
+/* DIP switch */
+#define DIP_SWITCH_MATRIX_GRID { {5, 4}, }
 
-/* Factory Reset Key Definition */
-#define FN_KEY1 MO(1)
-#define FN_KEY2 MO(3)
+/* Disable DIP switch in matrix data */
+#define MATRIX_MASKED
+
+/* Increase I2C speed to 1000 KHz */
+#define I2C1_TIMINGR_PRESC 0U
+#define I2C1_TIMINGR_SCLDEL 3U
+#define I2C1_TIMINGR_SDADEL 0U
+#define I2C1_TIMINGR_SCLH 15U
+#define I2C1_TIMINGR_SCLL 51U
+
+/* Enable indicator LED*/
+#define NUM_LOCK_LED_INDEX 16
+#define CAPS_LOCK_LED_INDEX 17
+#define MAC_OS_LED_INDEX 18
+#define WIN_OS_LED_INDEX 19
+
+/* HC595 driver definition */
+#define HC595_STCP A0
+#define HC595_SHCP A1
+#define HC595_DS C15
+#define HC595_START_INDEX 11
+#define HC595_END_INDEX 19
