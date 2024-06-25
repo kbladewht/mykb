@@ -8,7 +8,7 @@
         "bootmagic": true,
         "extrakey": true,
         "lto": true,
-        "mousekey": true,
+        "mousekey": false,
         "nkro": true,
         "oled": true
     },
