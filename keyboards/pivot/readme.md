@@ -17,6 +17,6 @@ vconfig=q75
 make qfly/${vconfig}:$vkeymap
 cp /c/msys64/home/xx/qmk_firmware3/.build/qfly_${vconfig}_$vkeymap.uf2 E:/flash.uf2
 
-ssh-keygen -t ed25519 -C "w00110601111@163.com"
+
 
 docker upgrade to v2
