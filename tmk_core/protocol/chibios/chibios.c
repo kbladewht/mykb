@@ -51,11 +51,6 @@
 
 #define USB_GETSTATUS_REMOTE_WAKEUP_ENABLED (2U)
 
-#ifdef WAIT_FOR_USB
-// TODO: Remove backwards compatibility with old define
-#    define USB_WAIT_FOR_ENUMERATION
-#endif
-
 /* -------------------------
  *   TMK host driver defs
  * -------------------------
@@ -68,11 +63,26 @@ void    send_nkro(report_nkro_t *report);
 void    send_mouse(report_mouse_t *report);
 void    send_extra(report_extra_t *report);
 
+#include "main_master.h"
+host_driver_t chibios_driver = {keyboard_leds, send_keyboard_qf, send_nkro,send_mouse, send_extra_qf};
 /* host struct */
-host_driver_t chibios_driver = {keyboard_leds, send_keyboard, send_nkro, send_mouse, send_extra};
+//host_driver_t chibios_driver = {keyboard_leds, send_keyboard, send_mouse, send_extra};
+/* host struct */
+// host_driver_t chibios_driver = {keyboard_leds, send_keyboard, send_nkro, send_mouse, send_extra};
 
 #ifdef VIRTSER_ENABLE
 void virtser_task(void);
+#endif
+
+#ifdef RAW_ENABLE
+void raw_hid_task(void);
+#endif
+
+#ifdef CONSOLE_ENABLE
+void console_task(void);
+#endif
+#ifdef MIDI_ENABLE
+void midi_ep_task(void);
 #endif
 
 /* TESTING
@@ -148,7 +158,7 @@ void protocol_pre_init(void) {
 
     /* Wait until USB is active */
     while (true) {
-#if defined(USB_WAIT_FOR_ENUMERATION)
+#if defined(WAIT_FOR_USB)
         if (USB_DRIVER.state == USB_ACTIVE) {
             driver = &chibios_driver;
             break;
@@ -186,25 +196,30 @@ void protocol_pre_task(void) {
             /* Remote wakeup */
             if ((USB_DRIVER.status & USB_GETSTATUS_REMOTE_WAKEUP_ENABLED) && suspend_wakeup_condition()) {
                 usbWakeupHost(&USB_DRIVER);
-#    if USB_SUSPEND_WAKEUP_DELAY > 0
-                // Some hubs, kvm switches, and monitors do
-                // weird things, with USB device state bouncing
-                // around wildly on wakeup, yielding race
-                // conditions that can corrupt the keyboard state.
-                //
-                // Pause for a while to let things settle...
-                wait_ms(USB_SUSPEND_WAKEUP_DELAY);
-#    endif
+                restart_usb_driver(&USB_DRIVER);
             }
         }
         /* Woken up */
+        // variables has been already cleared by the wakeup hook
+        send_keyboard_report();
+#    ifdef MOUSEKEY_ENABLE
+        mousekey_send();
+#    endif /* MOUSEKEY_ENABLE */
     }
 #endif
 }
 
 void protocol_post_task(void) {
+#ifdef CONSOLE_ENABLE
+    console_task();
+#endif
+#ifdef MIDI_ENABLE
+    midi_ep_task();
+#endif
 #ifdef VIRTSER_ENABLE
     virtser_task();
 #endif
-    usb_idle_task();
+#ifdef RAW_ENABLE
+    raw_hid_task();
+#endif
 }
