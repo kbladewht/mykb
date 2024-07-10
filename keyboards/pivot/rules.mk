@@ -22,7 +22,7 @@ SRC += quantum/midi/bytequeue/interrupt_setting.c
 
 # Enter lower-power sleep mode when on the ChibiOS idle thread
 OPT_DEFS += -DCORTEX_ENABLE_WFI_IDLE=TRUE
-
+  SRC += uart_serial_l.c
 SRC += rtt_viewer/SEGGER_RTT_printf.c
 SRC += rtt_viewer/SEGGER_RTT.c
 
