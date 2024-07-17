@@ -16,7 +16,9 @@ EXTRAKEY_ENABLE = yes
 CONSOLE_ENABLE = yes        # Console for debug
 NKRO_ENABLE = no          # Enable N-Key Rollover
 
-
+  SRC += ../uart_serial_l.c
+	SRC += ../../p401/actionuart.c
+SRC += ../../p401/qf_custom_animation.c
 
 # Enter lower-power sleep mode when on the ChibiOS idle thread
 OPT_DEFS += -DCORTEX_ENABLE_WFI_IDLE=TRUE
@@ -26,3 +28,5 @@ EEPROM_DRIVER = wear_leveling
 WEAR_LEVELING_DRIVER = legacy
 # VPATH += :../p401
 VPATH += $(TOP_DIR)/keyboards/pivot/p401
+
+LDFLAGS += -Llib -lqf401

@@ -5,7 +5,7 @@
 
 #define LED_ON_HIGH 1
 
-
+#undef DIODE_DIRECTION
 #define DIODE_DIRECTION COL2ROW
 
 
