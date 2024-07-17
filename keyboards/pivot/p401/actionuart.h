@@ -1,8 +1,11 @@
+
+#pragma once
 #include QMK_KEYBOARD_H
 #include "hal_pal.h"
 #include "powermstop.h"
 #include "outputselect.h"
 #include "uart.h"
+#include "pivot.h"
 
 #define SLEEPCODE 0x02
 #define PAIRCODE 0x03
@@ -53,14 +56,18 @@ void writeLowPinOutOD(pin_t pin);
 void rgb_power_enable(bool enable);
 uint8_t read_handwire_detect(void);
 void setDetectPinOutput(void);
+
 void setWKPin_high(void);
+void setWKPin_low(void);
+
 uint8_t readWKPin(void);
 void turnOFF_usb_led(void);
 void turnoff_power_led(void);
 void turnon_power_led(void);
 void turnoff_caps_led(void);
-void setWKPin_low(void);
 void turn_adc_off(void);
 void process_handle_wk_event(void);
 void handle_wk_event(pin_t wireDetectStatus,uint8_t rows, uint8_t cols,
                 const uint32_t *row_pins,const uint32_t *col_pins);
+pin_t get_adc_pin(void);
+u16 get_max_adc_val(void);

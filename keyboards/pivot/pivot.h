@@ -17,7 +17,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-
+#include <stdint.h>
+typedef uint32_t  u32;
+typedef uint16_t u16;
+typedef uint8_t  u8;
 
 #define QF_RESET do { __set_FAULTMASK(1); NVIC_SystemReset(); } while (0)
 

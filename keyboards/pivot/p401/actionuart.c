@@ -100,6 +100,14 @@ void writeHighPinOut(pin_t pin){
     writePinHigh(pin);
 }
 
+pin_t get_adc_pin(void){
+    return QF_ADC_PIN;
+}
+
+u16 get_max_adc_val(void){
+    return MAX_ADC_QF;
+}
+
 void switch_cols_gpio_from_3V(pin_t pin){
     writeHighPinOut(pin);
 }
