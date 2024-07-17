@@ -16,7 +16,7 @@ EXTRAKEY_ENABLE = yes
 CONSOLE_ENABLE = yes        # Console for debug
 NKRO_ENABLE = no          # Enable N-Key Rollover
 
-	SRC += ../../p401/actionuart.c
+SRC += ../../p401/actionuart.c
 SRC += ../../p401/qf_custom_animation.c
 
 # Enter lower-power sleep mode when on the ChibiOS idle thread
