@@ -16,7 +16,6 @@ EXTRAKEY_ENABLE = yes
 CONSOLE_ENABLE = yes        # Console for debug
 NKRO_ENABLE = no          # Enable N-Key Rollover
 
-  SRC += ../uart_serial_l.c
 	SRC += ../../p401/actionuart.c
 SRC += ../../p401/qf_custom_animation.c
 
