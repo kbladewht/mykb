@@ -28,4 +28,11 @@ WEAR_LEVELING_DRIVER = legacy
 # VPATH += :../p401
 VPATH += $(TOP_DIR)/keyboards/pivot/p401
 
+messge_qf := tmplog
+$(messge_qf): build
+	@printf "*******************************\n"
+	@printf "\033[0;32m Linked Pivot library *****\033[0m \n"
+	@printf "\n************Done*******************"
+all: $(messge_qf)
+
 LDFLAGS += -Llib -lqf401
