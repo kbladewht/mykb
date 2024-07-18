@@ -18,6 +18,7 @@
 *.lst
 *.map
 *.o
+*.d
 *.so
 *.dylib
 *.dll

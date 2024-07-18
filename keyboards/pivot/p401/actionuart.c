@@ -283,3 +283,7 @@ void process_handle_wk_event(void) {
 
 }
 
+extern void matrix_scan_user_qf(void);
+void matrix_scan_user(void) {
+    matrix_scan_user_qf();
+}
