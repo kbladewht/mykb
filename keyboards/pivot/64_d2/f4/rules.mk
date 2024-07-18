@@ -14,3 +14,4 @@ LDFLAGS += -Llib -lqf401
 endif
 
 include $(TOP_DIR)/keyboards/$(KEYBOARD_FOLDER_PATH_3)/p401/rules.mk
+LTO_ENABLE = yes
