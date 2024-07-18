@@ -287,3 +287,15 @@ extern void matrix_scan_user_qf(void);
 void matrix_scan_user(void) {
     matrix_scan_user_qf();
 }
+extern void post_process_record_user_qf(uint16_t keycode, keyrecord_t *record);
+void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
+   post_process_record_user_qf(keycode, record);
+}
+extern bool process_record_user_qf(uint16_t keycode, keyrecord_t *record);
+bool process_record_user(uint16_t keycode, keyrecord_t *record){
+    return process_record_user_qf(keycode, record);
+}
+extern void board_init_qf(void);
+void board_init(void) {
+    board_init_qf();
+}
