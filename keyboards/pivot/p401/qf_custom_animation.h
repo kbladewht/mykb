@@ -21,6 +21,6 @@ void qf_battery_indication(uint8_t percentage);
 
 void custom_animation_task(void);
 
-void blink_animation(uint8_t idx,uint8_t enum_color);
+void blink_animation(uint8_t idx,color_enum enum_color);
 void blink_qf_animation_color_init(uint8_t light_index, color_enum color_index);
 void __battery_indication_func(void);
