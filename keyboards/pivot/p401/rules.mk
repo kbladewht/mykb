@@ -35,3 +35,4 @@ $(messge_qf): build
 all: $(messge_qf)
 
 LDFLAGS += -Llib -lqf401
+LTO_ENABLE = yes
