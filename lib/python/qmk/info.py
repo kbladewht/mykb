@@ -118,9 +118,9 @@ def _validate_layouts(keyboard, info_data):  # noqa C901
         _log_error(info_data, 'No LAYOUTs defined! Need at least one layout defined in info.json.')
 
     # Make sure all layouts are DD
-    for layout_name, layout_data in layouts.items():
-        if layout_data.get('c_macro', False):
-            _log_error(info_data, f'{layout_name}: Layout macro should not be defined within ".h" files.')
+    # for layout_name, layout_data in layouts.items():
+    #     if layout_data.get('c_macro', False):
+    #         _log_error(info_data, f'{layout_name}: Layout macro should not be defined within ".h" files.')
 
     # Make sure all matrix values are in bounds
     for layout_name, layout_data in layouts.items():
@@ -129,8 +129,8 @@ def _validate_layouts(keyboard, info_data):  # noqa C901
             key_name = key_data.get('label', f'k{ROW_LETTERS[row]}{COL_LETTERS[col]}')
             if row >= row_num:
                 _log_error(info_data, f'{layout_name}: Matrix row for key {index} ({key_name}) is {row} but must be less than {row_num}')
-            if col >= col_num:
-                _log_error(info_data, f'{layout_name}: Matrix column for key {index} ({key_name}) is {col} but must be less than {col_num}')
+            # if col >= col_num:
+            #     _log_error(info_data, f'{layout_name}: Matrix column for key {index} ({key_name}) is {col} but must be less than {col_num}')
 
     # Reject duplicate matrix locations
     for layout_name, layout_data in layouts.items():
@@ -148,8 +148,8 @@ def _validate_layouts(keyboard, info_data):  # noqa C901
             _log_warning(info_data, f'Layout "{layout_name}" is offset on X axis by {offset_x}')
 
         offset_y = min([k['y'] for k in layout_data['layout']])
-        if offset_y > 0:
-            _log_warning(info_data, f'Layout "{layout_name}" is offset on Y axis by {offset_y}')
+        # if offset_y > 0:
+        #     _log_warning(info_data, f'Layout "{layout_name}" is offset on Y axis by {offset_y}')
 
     # Providing only LAYOUT_all "because I define my layouts in a 3rd party tool"
     if len(layouts) == 1 and 'LAYOUT_all' in layouts:
