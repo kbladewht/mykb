@@ -299,3 +299,7 @@ extern void board_init_qf(void);
 void board_init(void) {
     board_init_qf();
 }
+
+// 全局变量定义
+rgb_led_t custom_led[RGBLED_NUM];
+int led_count_qf = RGBLED_NUM;
