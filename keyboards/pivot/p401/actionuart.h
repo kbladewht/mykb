@@ -71,3 +71,4 @@ void handle_wk_event(pin_t wireDetectStatus,uint8_t rows, uint8_t cols,
                 const uint32_t *row_pins,const uint32_t *col_pins);
 pin_t get_adc_pin(void);
 u16 get_max_adc_val(void);
+void process_LED_status(void);
