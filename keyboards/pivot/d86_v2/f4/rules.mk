@@ -1,0 +1,5 @@
+MCU = STM32F401
+BOARD = GENERIC_STM32_F401XC
+
+
+include $(TOP_DIR)/keyboards/$(KEYBOARD_FOLDER_PATH_3)/p401/rules.mk
