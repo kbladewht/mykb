@@ -18,7 +18,6 @@
 #include "quantum.h"
 #include "outputselect.h"
 #include "actionuart.h"
-#include "qf_custom_animation.h"
 static SerialConfig serialConfig = {
     SERIAL_DEFAULT_BITRATE,
     UART_CR1,

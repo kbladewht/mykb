@@ -5,6 +5,7 @@
 #include "eeconfig.h"
 #include "eeprom.h"
 #include "analog_qf.h"
+#define GPIO_PIN_INVALID -1 // 自定义无效引脚常量
 
 bool power_pin_inited = false;
 void power_pin_init(void) {
@@ -54,10 +55,47 @@ void turnon_power_led(void) {
 }
 
 
-void turnoff_caps_led(void) {
-     #if defined (LED_CAPS_LOCK_PIN)
+void turnon_caps_led(void){
+    #if defined(LED_CAPS_LOCK_PIN)
+        turn_on_led(LED_CAPS_LOCK_PIN);
+    #endif
+}
+
+
+void turnoff_caps_led(void){
+    #if defined(LED_CAPS_LOCK_PIN)
         turn_off_led(LED_CAPS_LOCK_PIN);
-     #endif
+    #endif
+}
+
+bool power_pin_enable(void){
+    #if defined(POWER_PIN)
+        return true;
+    #else
+        return false;
+    #endif
+}
+bool caps_pin_enable(void){
+    #if defined(LED_CAPS_LOCK_PIN)
+        return true;
+    #else
+        return false;
+    #endif
+}
+bool BLINK_BLE_LED_enable(void){
+    #if defined(BLINK_BLE_LED)
+        return true;
+    #else
+        return false;
+    #endif
+}
+
+bool FN_BLE__RGB_LED_enable(void){
+    #if defined(FN_BLE__RGB_LED)
+        return true;
+    #else
+        return false;
+    #endif
 }
 
 void setWKPin_high(void) {
@@ -66,6 +104,16 @@ void setWKPin_high(void) {
 
 uint8_t readWKPin(void) {
    return readPin(WK_PIN);
+}
+
+uint8_t useVBat(void) {
+
+    #if defined (USE_VBAT)
+        return 1;
+     #else
+        return 0;
+     #endif
+
 }
 
 
@@ -81,9 +129,43 @@ pin_t get_adc_pin(void){
     return QF_ADC_PIN;
 }
 
+pin_t get_CHANNEL0_LED_PIN_pin(void){
+    #ifdef CHANNEL0_LED_PIN
+        return CHANNEL0_LED_PIN;
+    #else
+        return GPIO_PIN_INVALID;
+    #endif
+}
+
+pin_t get_CHANNEL1_LED_PIN_pin(void){
+    #ifdef CHANNEL1_LED_PIN
+        return CHANNEL1_LED_PIN;
+    #else
+        return GPIO_PIN_INVALID;
+    #endif
+}
+
+pin_t get_CHANNEL2_LED_PIN_pin(void){
+    #ifdef CHANNEL2_LED_PIN
+        return CHANNEL2_LED_PIN;
+    #else
+        return GPIO_PIN_INVALID;
+    #endif
+}
+
+pin_t get_CHANNEL4_LED_PIN_pin(void){
+    #ifdef CHANNEL4_LED_PIN
+        return CHANNEL4_LED_PIN;
+    #else
+        return GPIO_PIN_INVALID;
+    #endif
+}
+
 u16 get_max_adc_val(void){
     return MAX_ADC_QF;
 }
+
+
 
 void process_handle_wk_event(void) {
 
@@ -120,7 +202,6 @@ rgb_led_t custom_led[RGBLED_NUM];
 int led_count_qf = RGBLED_NUM;
 
 pin_t WK_PIN_API = WK_PIN;
-int RGBLED_NUM_API = RGBLED_NUM;
 
 #if defined (POWER_LED)
     pin_t POWER_LED_API = POWER_LED;
@@ -130,7 +211,13 @@ int RGBLED_NUM_API = RGBLED_NUM;
 u16 MAX_ADC_QF_API = MAX_ADC_QF;
 pin_t QF_ADC_PIN_API = QF_ADC_PIN;
 pin_t HAND_WIRE_DETECT_API = HAND_WIRE_DETECT;
-pin_t LED_CAPS_LOCK_PIN_API = LED_CAPS_LOCK_PIN;
 pin_t USB_PIN_LED_API = USB_PIN_LED;
-pin_t POWER_PIN_API = POWER_PIN;
+u16 MATRIX_ROWS_API = MATRIX_ROWS;
+u16 MATRIX_COLS_API = MATRIX_COLS;
+u16 RADIO_LED_INDEX_API = RADIO_LED_INDEX;
+u16 RGBLED_NUM_API = RGBLED_NUM;
+// pin_t LED_PIN_API = LED_PIN;
+
+// pin_t POWER_PIN_API = POWER_PIN;
+
 int CAPS_LED_INDEX_API = CAPS_LED_INDEX;

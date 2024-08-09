@@ -44,6 +44,7 @@ u8   getPercent(u16 adcx);
 void process_adc_stm(uint8_t force_show);
 void process_adc_stm_rgb(void) ;
 void adc_stop_qf(pin_t pin);
+int16_t read_vbat(void);
 
 #ifdef __cplusplus
 }

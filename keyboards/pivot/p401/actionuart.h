@@ -61,9 +61,11 @@ void setWKPin_high(void);
 void setWKPin_low(void);
 
 uint8_t readWKPin(void);
+uint8_t useVBat(void);
 void turnOFF_usb_led(void);
 void turnoff_power_led(void);
 void turnon_power_led(void);
+void turnon_caps_led(void);
 void turnoff_caps_led(void);
 void turn_adc_off(void);
 void process_handle_wk_event(void);
@@ -72,3 +74,11 @@ void handle_wk_event(pin_t wireDetectStatus,uint8_t rows, uint8_t cols,
 pin_t get_adc_pin(void);
 u16 get_max_adc_val(void);
 void process_LED_status(void);
+bool power_pin_enable(void);
+bool caps_pin_enable(void);
+bool BLINK_BLE_LED_enable(void);
+bool FN_BLE__RGB_LED_enable(void);
+pin_t get_CHANNEL0_LED_PIN_pin(void);
+pin_t get_CHANNEL1_LED_PIN_pin(void);
+pin_t get_CHANNEL2_LED_PIN_pin(void);
+pin_t get_CHANNEL4_LED_PIN_pin(void);

@@ -5,8 +5,8 @@
 #include "uart.h"
 #include "eeconfig.h"
 #include "eeprom.h"
+// #include "config.h"
 #include "analog_qf.h"
-
 
 
 void uartSendByAction(uint8_t actionCode){
@@ -28,6 +28,7 @@ void writeHighPinOut(pin_t pin){
     setPinOutput(pin);
     writePinHigh(pin);
 }
+
 
 void switch_cols_gpio_from_3V(pin_t pin){
     writeHighPinOut(pin);
@@ -123,7 +124,7 @@ void turn_on_led_OD(pin_t pin){
 
 void turn_off_led(pin_t pin){
     if(LED_ON_HIGH==1){
-        writePinLow(pin);
+        writeLowPinOut(pin);
     }else{
         writePinHigh(pin);
     }
@@ -167,16 +168,30 @@ void showLEDInit(void) {
 
 void flyInit(void){
 
-    //uint32_t eeprom_default = eeconfig_read_user();
-    //set_output_default((uint8_t)eeprom_default);//Remember the default channel , either usb or BLE
+    #if defined(CHANNEL0_LED_PIN)
+        turn_off_led(CHANNEL0_LED_PIN);
+    #endif
 
-    // uint32_t channelEE = eeconfig_read_user();
-    // xprintf("eeconfig_init_user111 ,current channel is %d \n",channelEE);
+    #if defined(CHANNEL1_LED_PIN)
+        turn_off_led(CHANNEL1_LED_PIN);
+    //    turn_off_led(CHANNEL1_LED_PIN);
+    #endif
 
-    // set_output_user(channelEE);
+    #if defined(CHANNEL2_LED_PIN)
+            turn_off_led(CHANNEL2_LED_PIN);
+    #endif
 
+    #if defined(CHANNEL4_LED_PIN)
+            turn_off_led(CHANNEL4_LED_PIN);
+    #endif
 
-    // initialize anything that requires ChibiOS
+    #if defined (CHARGE_DETECT_PIN)
+        writeHighPinOutOD(CHARGE_DETECT_PIN);
+    #endif
+
+    #if defined (LED_CAPS_LOCK_PIN)
+        turn_off_led(LED_CAPS_LOCK_PIN);
+    #endif
 
     #if defined (POWER_LED)
         turn_on_led(POWER_LED);
